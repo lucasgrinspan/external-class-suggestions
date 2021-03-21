@@ -10,6 +10,14 @@ By default, the extension fetches the CSS from Bootstrap, but this can be config
 
 ## Installation
 
+> Note: for this extension to have an effect, you must have this rule in your `settings.json`:
+
+```json
+"editor.quickSuggestions": {
+    "strings": true
+}
+```
+
 Clone this project and generate its package.
 
 ```console
