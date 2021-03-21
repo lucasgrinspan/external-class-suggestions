@@ -4,6 +4,10 @@
     "description": "Provides suggestions when adding class names to JSX files from external stylsheets",
     "publisher": "lucasgrinspan",
     "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lucasgrinspan/external-class-suggestions/"
+    },
     "engines": {
         "vscode": "^1.54.0"
     },
