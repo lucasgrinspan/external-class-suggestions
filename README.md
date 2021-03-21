@@ -1,4 +1,4 @@
-# external-class-suggestions README
+# External Class Suggestions Extension
 
 This extension reads external stylesheets and suggests class names when editing the className attribute in JSX/TSX files. This extension is based off of [HTMLClassSuggestionsVSCode](https://github.com/andersea/HTMLClassSuggestionsVSCode).
 
