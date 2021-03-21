@@ -1,4 +1,4 @@
-import { window } from "vscode";
+import { window, workspace } from "vscode";
 import flow = require("lodash.flow");
 import getTextFromUrl from "./fileReader";
 import { distinct } from "./utils/array";
@@ -7,10 +7,15 @@ import { parseCssTexts, getCSSRules, getCSSSelectors, getCSSClasses } from "./ut
 const classExtractor = flow(getCSSRules, getCSSSelectors, getCSSClasses, distinct);
 
 export default async function (): Promise<string[]> {
+    const config = workspace.getConfiguration("external-class-suggestions");
+    const urls: string[] | undefined = config.get("externalStylesheets");
+    if (!urls) {
+        console.error("Configuration not set");
+        return [];
+    }
+
     try {
-        const rawCss = await getTextFromUrl([
-            "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
-        ]);
+        const rawCss = await getTextFromUrl(urls);
         const cssTexts = parseCssTexts(rawCss);
         const distinctClasses = classExtractor(cssTexts);
         window.setStatusBarMessage(`CSS Classes successfully loaded`, 5000);

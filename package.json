@@ -17,7 +17,18 @@
     ],
     "main": "./dist/extension.js",
     "contributes": {
-        "commands": []
+        "configuration": {
+            "title": "External Class Suggestions",
+            "properties": {
+                "external-class-suggestions.externalStylesheets": {
+                    "type": "array",
+                    "default": [
+                        "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                    ],
+                    "description": "Specifies the URLs of the external stylesheets to load suggestions from"
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run package",
