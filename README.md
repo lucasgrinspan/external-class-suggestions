@@ -4,7 +4,7 @@ This extension reads external stylesheets and suggests class names when editing 
 
 ## Features
 
-![Demo](../images/demo.gif)
+![Demo](/images/demo.gif)
 
 By default, the extension fetches the CSS from Bootstrap, but this can be configured under `"external-class-suggestions.externalStylesheets"` by either adding to the array of URLs or replacing the Bootstrap URL.
 
