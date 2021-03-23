@@ -30,7 +30,7 @@ npm run build
 This will create a `.vsix` file in the root of the project directory. This extension file can be installed with
 
 ```console
-code --install-extension external-class-suggestions-1.0.0.vsix
+code --install-extension external-class-suggestions-1.0.1.vsix
 ```
 
 If you can't generate the `.vsix` file, you can download it from the [Releases Tab](https://github.com/lucasgrinspan/external-class-suggestions/releases).
@@ -40,6 +40,10 @@ If you can't generate the `.vsix` file, you can download it from the [Releases T
 -   `external-class-suggestions.externalStylesheets`: External stylesheets to load suggestions from
 
 ## Release Notes
+
+### 1.0.1
+
+-   Simplifies RegEx complexity of `sanitizeClassName`
 
 ### 1.0.0
 
