@@ -89,11 +89,15 @@ export function findClassName(selector: string): string {
 }
 
 export function sanitizeClassName(className: string): string {
-    return className.replace(/\\[!"#$%&'()*+,\-./:;<=>?@[\\\]^`{|}~]/g, (substr, ...args) => {
-        if (args.length === 2) {
-            return substr.slice(1);
-        } else {
-            return substr;
-        }
-    });
+    // sometimes, the end of groups make its way into a class
+    return className.replace(")", "");
+
+    // TODO: figure out why this was necessary
+    // return className.replace(/\\[!"#$%&'()*+,\-./:;<=>?@[\\\]^`{|}~]/g, (substr, ...args) => {
+    //     if (args.length === 2) {
+    //         return substr.slice(1);
+    //     } else {
+    //         return substr;
+    //     }
+    // });
 }
